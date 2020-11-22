@@ -51,7 +51,7 @@
             <v-card-text class="text-center justify-center py-6">
               Signed up users can enter their name to pay.
             </v-card-text>
-            <!-- <NameAutocomplete v-model="customer" /> -->
+            <NameAutocomplete v-model="customer" />
           </v-card-text>
         </v-tab-item>
       </v-tabs-items>
@@ -62,18 +62,22 @@
 <script lang="ts">
 import Vue from 'vue'
 import { mapActions, mapMutations, mapState } from 'vuex'
+import NameAutocomplete from '../components/NameAutocomplete.vue'
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 const timestamp = () => Math.floor(Date.now() / 1000)
 
 export default Vue.extend({
+  components: { NameAutocomplete },
   data: () => {
     const data: {
       paymentIntents: any
       tab: any
+      customer: string
     } = {
       paymentIntents: {},
       tab: null,
+      customer: ':',
     }
     return data
   },

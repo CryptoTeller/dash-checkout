@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-card min-width="285px"
-      ><v-card-title class="text-center mx-auto"
+    <v-card class="mx-auto mb-6" max-width="550px">
+      <v-card-title class="text-center mx-auto"
         ><span v-if="isPaid">Payment Received.</span>
         <span v-if="!isPaid">Waiting for Payment.</span></v-card-title
       >
@@ -34,19 +34,19 @@
         >
         <span v-else>Waiting .. </span>
       </v-card-text>
+      <v-alert
+        v-if="isPaid"
+        outlined
+        border="top"
+        type="info"
+        color="green"
+        elevation="2"
+        prominent=""
+      >
+        Your <b>{{ $store.state.selectedItem.name }}</b> voucher is:<br />
+        <code>{{ uuid }}</code>
+      </v-alert>
     </v-card>
-    <v-alert
-      v-if="isPaid"
-      outlined
-      border="top"
-      type="info"
-      color="green"
-      elevation="2"
-      prominent=""
-    >
-      Your <b>{{ $store.state.selectedItem.name }}</b> voucher is:<br />
-      <code>{{ uuid }}</code>
-    </v-alert>
   </div>
 </template>
 

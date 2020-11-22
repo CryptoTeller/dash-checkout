@@ -1,46 +1,45 @@
 {
-  "AddressIndex": {
-   "indices": [
-    {
-     "unique": false,
-     "properties": [
-      {
-       "$ownerId": "asc"
-      }
-     ]
+    "AddressIndex": {
+        "indices": [
+            {
+                "unique": false,
+                "properties": [
+                    {
+                        "$ownerId": "asc"
+                    }
+                ]
+            },
+            {
+                "unique": true,
+                "properties": [
+                    {
+                        "index": "asc"
+                    }
+                ]
+            },
+            {
+                "unique": true,
+                "properties": [
+                    {
+                        "address": "asc"
+                    }
+                ]
+            }
+        ],
+        "required": [
+            "address",
+            "index"
+        ],
+        "properties": {
+            "address": {
+                "type": "string"
+            },
+            "index": {
+                "type": "number"
+            }
+        },
+        "additionalProperties": false
     },
-    {
-     "unique": true,
-     "properties": [
-      {
-       "index": "asc"
-      }
-     ]
-    },
-    {
-     "unique": true,
-     "properties": [
-      {
-       "address": "asc"
-      }
-     ]
-    }
-   ],
-   "required": [
-    "address",
-    "index"
-   ],
-   "properties": {
-    "index": {
-     "type": "number"
-    },
-    "address": {
-     "type": "string",
-     "maxLength": 1024
-    }
-   },
-   "additionalProperties": false
-  },
   "PaymentIntent": {
    "indices": [
     {
