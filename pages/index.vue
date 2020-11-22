@@ -1,5 +1,11 @@
 <template>
   <div>
+    <div
+      class="text-h3 my-12 text-center"
+      style="color: #820dff; text-shadow: 2px 2px 4px #c063dc;"
+    >
+      andy's digital assets webshop
+    </div>
     <v-stepper v-model="checkoutStep">
       <v-stepper-header>
         <v-stepper-step :complete="checkoutStep > 1" step="1" editable
@@ -9,12 +15,12 @@
         <v-divider></v-divider>
 
         <v-stepper-step :complete="checkoutStep > 2" step="2"
-          >Connect Wallet</v-stepper-step
+          >Checkout</v-stepper-step
         >
 
         <v-divider></v-divider>
 
-        <v-stepper-step step="3">Approve Payment</v-stepper-step>
+        <v-stepper-step step="3">Payment Confirmation</v-stepper-step>
       </v-stepper-header>
 
       <v-stepper-items>

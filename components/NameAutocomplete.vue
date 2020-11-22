@@ -1,17 +1,53 @@
 <template>
-  <v-autocomplete
-    :loading="loading"
-    :items="items"
-    :search-input.sync="search"
-    cache-items
-    flat
-    hide-no-data
-    hide-details
-    label="Enter Dash Name"
-    solo
-    :value="value"
-    @input="$emit('input', $event)"
-  ></v-autocomplete>
+  <div>
+    <v-autocomplete
+      :loading="loading"
+      :items="items"
+      :search-input.sync="search"
+      cache-items
+      hide-no-data
+      hide-details
+      label="Enter Dash Name"
+      solo
+      :value="value"
+      auto-select-first
+      class="mx-auto"
+      style="
+        font-size: 1.6rem;
+        font-weight: 700;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+      "
+      outlined
+      @input="$emit('input', $event)"
+    ></v-autocomplete>
+    <v-text-field
+      v-if="value.length > 1"
+      v-model="loginPin"
+      style="
+        font-size: 1.6rem;
+        font-weight: 700;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+      "
+      outlined
+      label="DAPP PIN"
+      :rules="loginPinRules"
+    />
+    <v-btn
+      style="
+        border-top-left-radius: 13px;
+        border-bottom-right-radius: 13px;
+        border-top-right-radius: 1px;
+        border-bottom-left-radius: 1px;
+      "
+      large
+      class="ml-2 mb-4"
+      color="primary"
+    >
+      Log In
+    </v-btn>
+  </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'

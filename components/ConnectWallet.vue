@@ -14,10 +14,10 @@
           Guest
         </v-tab>
         <v-tab>
-          Signup
+          Account
         </v-tab>
         <v-tab>
-          By Name
+          Dashpay
         </v-tab>
       </v-tabs>
       <v-tabs-items v-model="tab">
@@ -37,21 +37,22 @@
         <v-tab-item>
           <v-card-text class="text-center justify-center py-6">
             <v-card-text class="text-center justify-center py-6">
-              Choose to enable "pay by name" in the future.
+              Log into your existing Dash Account
+            </v-card-text>
+            <NameAutocomplete v-model="customer" />
+          </v-card-text>
+        </v-tab-item>
+        <v-tab-item>
+          <v-card-text class="text-center justify-center py-6">
+            <v-card-text class="text-center justify-center py-6">
+              Scan to add <strong>{{ $store.state.name.label }}</strong> to your
+              Dashpay contact list.
             </v-card-text>
             <qrcode
               :value="$store.state.name.label"
               tag="img"
               style="margin-to: -5px;"
             ></qrcode>
-          </v-card-text>
-        </v-tab-item>
-        <v-tab-item>
-          <v-card-text class="text-center justify-center py-6">
-            <v-card-text class="text-center justify-center py-6">
-              Signed up users can enter their name to pay.
-            </v-card-text>
-            <NameAutocomplete v-model="customer" />
           </v-card-text>
         </v-tab-item>
       </v-tabs-items>
