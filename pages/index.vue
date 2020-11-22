@@ -1,10 +1,14 @@
 <template>
   <div>
     <div
-      class="text-h3 my-12 text-center"
-      style="color: #820dff; text-shadow: 2px 2px 4px #c063dc;"
+      class="text-h4 my-12 text-center"
+      style="
+        color: #787878;
+        text-shadow: 2px 2px 4px #78787840;
+        font-family: Montserrat, sans-serif !important;
+      "
     >
-      andy's digital assets webshop
+      {{ $store.state.name.label }}
     </div>
     <v-stepper v-model="checkoutStep">
       <v-stepper-header>
